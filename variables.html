@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CIT 160 Lab - Vehicle Registration</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Vehicle Registration</h1>
+        <label for="fullname">Owner Full Name: </label>
+        <input type="text" id="fullname">
+        <label for="year">Vehicle Year: </label>
+        <input type="text" id="year">
+        <label for="make">Vehicle Make: </label>
+        <input type="text" id="make">
+        <label for="make">Vehicle Model: </label>
+        <input type="text" id="model">
+        <label for="discount">Discount Amount: </label><input type="number" id="discount">
+        <div class="processing"><button onclick="getTotalDue()">Compute Total</button></div>
+    </div>
+    <script>
+        function getTotalDue() {
+            //Delcarations
+            const totalAmountDue = 100;
+
+            //Input
+            const discount = document.getElementById('discount').value;
+
+            //processing - getTotalDue = 100
+            total = totalAmountDue - discount;
+            //output
+            document.getElementById('getTotalDue').innerHTML
+
+        }
+    </script>
+    <link rel="stylesheet" href="css/registration.css">
+</body>
+
+</html>
