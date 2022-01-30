@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strings</title>
+    <header>
+        <h1>Scripture Story Build</h1>
+        <h2>Carter Orr</h2>
+        <link rel="stylesheet" href="css/strings.css">
+    </header>
+</head>
+
+<body>
+
+    <main>
+        <h3>Inputs</h3>
+        <label class="heading">Provide a first name: <input type="text" id="firstname" placeholder="Sarah"></label>
+        <label class="heading">Name a fruit: <input type="text" id="fruit" placeholder="apple"></label>
+        <label class="heading">Name an animal: <input type="text" id="animal1" placeholder="horse"></label>
+        <label class="heading">Name another animal: <input type="text" id="animal2" placeholder="lamb"></label>
+
+        <div class="process"><button onclick="stringPassage()">Build Story</button>
+        </div>
+        <p id="output"></p>
+        <footer>
+            &copy;<span id="copyright"></span> &bull; Carter Orr &bull; BYU-Idaho &bull; CIT 160
+        </footer>
+    </main>
+
+    <script>
+        document.querySelector('#copyright').textContent = new Date().getFullYear();
+
+        function stringPassage() {
+            // INPUT
+
+            let userName = document.getElementById('firstname').textContent;
+            let userFruit = document.querySelector('#fruit').textContent;
+            let userAnimal1 = document.querySelector('#animal1').textContent;
+            let userAnimal2 = document.querySelector('#animal2').textContent;
+            // PROCESSING
+            const scripturePassage  = `And it came to pass that the people of ${userName} did till the land, and raise all manner of ${userFruit}, and flocks of herds, and flocks of all manner of ${userAnimal1} of every kind, and ${userAnimal2}.`;
+
+            //OUTPUT - Example output: "And it came to pass that the people of ___ did till the land, and raise all manner of ___, and flocks of herds, and flocks of all manner of ___ of every kind, and ___."
+            document.querySelector('#output').innerHTML = scripturePassage;
+
+        }
+
+    </script>
+
+</body>
+
+</html>
