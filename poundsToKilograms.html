@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pounds to Kilograms </title>
+    <h1> Pounds To Kilograms Conversion </h1>
+</head>
+
+<body>
+<p>
+    <label for="kilograms">Kilograms</label>
+    <input type="text" id="kilograms">
+    <div class="process"> <button onclick="conversion()"> Compute </button></div></p><p id="pounds">  </p>
+
+    <script>
+        function conversion() {
+
+        //Declarations
+        let kilograms = 0;
+        const kiloPerPound = 2.20462;
+
+        //Input 1 kilogram = 2.20462 Pounds
+
+        kilograms = parseFloat(document.querySelector("#kilograms").value);
+
+
+        //Processing
+        kilo = kilograms * kiloPerPound;
+
+        //Output
+        document.getElementById("pounds").innerHTML = kilo.toFixed(2) + " pounds per " + document.getElementById("kilograms").value + " Kilograms";
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
