@@ -59,14 +59,14 @@
             let discount = 0;
             let tax = 0;
 
-            q1 = parseFloat(document.querySelector('#q1').value);
-            p1 = parseFloat(document.querySelector('#p1').value);
-            q2 = parseFloat(document.querySelector('#q2').value);
-            p2 = parseFloat(document.querySelector('#p2').value);
-            q3 = parseFloat(document.querySelector('#q3').value);
-            p3 = parseFloat(document.querySelector('#p3').value);
-            discount = parseFloat(document.querySelector('#discount').value);
-            tax = parseFloat(document.querySelector('#tax').value);
+            q1 = Number(document.querySelector('#q1').value);
+            p1 = Number(document.querySelector('#p1').value);
+            q2 = Number(document.querySelector('#q2').value);
+            p2 = Number(document.querySelector('#p2').value);
+            q3 = Number(document.querySelector('#q3').value);
+            p3 = Number(document.querySelector('#p3').value);
+            discount = Number(document.querySelector('#discount').value);
+            tax = Number(document.querySelector('#tax').value);
 
 
             // PROCESSING
@@ -76,10 +76,10 @@
             cTotal = q3 * p3;
             salesTotal = aTotal + bTotal + cTotal;
             discountedTotal = salesTotal - (salesTotal * discount);
-            taxTotal = discountedTotal - (discountedTotal * tax);
+            taxTotal = discountedTotal + (discountedTotal * tax);
 
             //OUTPUT
-            document.querySelector('#output').innerHTML = taxTotal;
+            document.querySelector(`#output`).innerHTML = `The total amount due is $${taxTotal}.`;
 
 
         }
