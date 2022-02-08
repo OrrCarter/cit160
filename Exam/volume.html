@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>volume of a cylidner</title>
+</head>
+<header>
+    <h1>Volume of a Cylinder</h1>
+</header>
+<h2>Calculate Volume</h2>
+
+<body>
+    <label for="radius">Radius:</label>
+    <input type="text" id="radiusInput"><br>
+    <br>
+    <label for="height">Height:</label>
+    <input type="text" id="heightInput"><br>
+    <br>
+    <div class="process"><button onclick="volume()">Calculate</button>
+    </div>
+    <p id="results"></p>
+
+
+    <script>
+        function volume() {
+
+            //variables 
+            const dessert = Math.PI;
+
+
+            //input  radius and height 
+            let rad = document.getElementById("radiusInput").value;
+
+            let tall = document.getElementById("heightInput").value;
+
+            let rad2 = rad**2
+
+            //processing pi * radius squared * height
+
+            let vol = (dessert * rad2 * tall).toFixed(2);
+
+            //output output with $ and up to 2 decimals
+            document.getElementById("results").innerHTML = `Volume:${vol}`;
+
+
+        }
+
+    </script>
+</body>
+
+</html>

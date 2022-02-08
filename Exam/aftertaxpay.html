@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aftertaxpay</title>
+</head>
+<header>
+    <h1>Gross Income</h1>
+</header>
+<h2>Calculate After Tax Pay From Period</h2>
+
+<body>
+    <label for="reghours">Regular Hours Worked:</label>
+    <input type="text" id="regHours"><br>
+    <br>
+    <label for="overtime">Overtime Hours Worked:</label>
+    <input type="text" id="overTimeHours"><br>
+    <br>
+    <div class="process"><button onclick="workhours()">Calculate</button>
+    </div>
+    <p id="results"></p>
+
+
+    <script>
+        function workhours() {
+
+            //variables
+            const regPay = 15;
+            const regOT = 22.50;
+            const tax = .15;
+
+
+            //input  reg. pay and OT pay. 
+            let reg1 = document.getElementById("regHours").value;
+
+            let hours2 = document.getElementById("overTimeHours").value;
+
+
+            //processing tax rate is 15%
+            let normalPay = reg1 * regPay;
+            let otPay = hours2 * regOT;
+            let preTaxPay = normalPay + otPay
+            let finalPay = (preTaxPay - (preTaxPay * tax)).toFixed(2);
+
+            //output output with $ and up to 2 decimals
+            document.getElementById("results").innerHTML = `Period Pay $${finalPay}`;
+
+
+        }
+
+    </script>
+</body>
+
+</html>
