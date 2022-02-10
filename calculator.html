@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+</head>
+
+<body>
+    <h1>Calculator</h1>
+    <span id="num1"></span>
+    <select id="operand">
+        <option value="" selected disabled>--An Operand--
+        </option>
+        <option value="addition">+ Addition</option>
+        <option value="subtraction">- Subtraction</option>
+    </select>
+    <span id="num2"> 4 </span> =
+    <input type="text" id="answer"><br>
+    <hr>
+    <button onclick="checkMath()">Check</button><br>
+    <hr>
+    <p id="message"></p>
+
+    <script> 
+         const max = 10;
+         let num1 = Math.floor(Math.random() * max);
+         let num2 = Math.floor(Math.random() * max);
+        document.querySelector(`#num1`).textContent = ` ${num1} `;
+        document.querySelector(`#num2`).textContent = ` ${num2} `;
+    
+    function checkMath(){
+       //input - get opperand and get answer
+let operand = document.getElementById(`operand`).value;
+let userAnswer = Number(document.querySelector(`#answer`).value);
+
+       //processing - if + then set answer Key to addition or set it to subrtaction // Compare
+       /* compare answer
+       to the apropriat message*/
+//figure out answer key
+let answerKey = 0;
+let message = ``;
+
+//determine answer key
+if (operand === "addition"){
+    answerKey = num1 + num2;}
+    else { answerKey = num1 - num2;}
+//determine message
+    if (answerKey === userAnswer){
+message = `Correct! 🏆`; }
+else { message = `Incorrect 😢`;}
+
+       //output Post message
+document.querySelector(`#message`).textContent = message;
+
+        
+        }
+        
+            </script>
+</body>
+
+</html>
