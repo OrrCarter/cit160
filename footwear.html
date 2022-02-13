@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footwear</title>
+</head>
+
+<body>
+    <h1>Footwear</h1>
+    <h2>What shoes should I wear?</h2>
+    <br>
+    <select id="footwear">
+        <option value="" selected disabled>--Choose Weather--</option>
+        <option value="Hot">Hot</option>
+        <option value="Rain">Rain</option>
+        <option value="Snow">Snow</option>
+        <option value="Unknown">Unknown</option>
+        <br>
+    </select>
+    <button onclick="weather()">Result</button>
+    <p id="prompt"></p>
+    <script>
+
+        //input (get input from html and assign)
+        let currentWeather = document.querySelector(`#footwear`).textContent
+        const hotShoes = `sandals`
+        const rainShoes = `galoshes`
+        const snowShoes = `boots`
+        const unknownShoes = `shoes`
+        let shoeSuggestion = `none`
+
+        function weather();
+        {
+
+            //processing (grab input and give a prompt) if statement
+
+            if (currentWeather == "Hot"); {
+                shoeSuggestion = hotShoes;
+                if (currentWeather == `Rain`); {
+                    shoeSuggestion = rainShoes;
+                    if (currentWeather == `Snow`); {
+                        shoeSuggestion = snowShoes;
+                        if (currentWeather == `Unknown`); {
+                            shoeSuggestion = unknownShoes;
+                        }
+                    }
+                }
+
+
+            }
+
+            //output output prompt from button
+
+            document.getElementById(`prompt`).innerHTML = shoeSuggestion;
+
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
