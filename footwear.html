@@ -26,24 +26,24 @@
 
         //input (get input from html and assign)
         let currentWeather = document.querySelector(`#footwear`).textContent
-        const hotShoes = `sandals`
-        const rainShoes = `galoshes`
-        const snowShoes = `boots`
-        const unknownShoes = `shoes`
-        let shoeSuggestion = `none`
+        const hotShoes = `sandals`;
+        const rainShoes = `galoshes`;
+        const snowShoes = `boots`;
+        const unknownShoes = `shoes`;
+        let shoeSuggestion = `none`;
 
-        function weather();
+        function weather()
         {
 
             //processing (grab input and give a prompt) if statement
 
-            if (currentWeather == "Hot"); {
+            if (currentWeather === "Hot") {
                 shoeSuggestion = hotShoes;
-                if (currentWeather == `Rain`); {
+                if (currentWeather === `Rain`) {
                     shoeSuggestion = rainShoes;
-                    if (currentWeather == `Snow`); {
+                    if (currentWeather === `Snow`) {
                         shoeSuggestion = snowShoes;
-                        if (currentWeather == `Unknown`); {
+                        if (currentWeather === `Unknown`) {
                             shoeSuggestion = unknownShoes;
                         }
                     }

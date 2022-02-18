@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+</head>
+<body>
+    <h1>Alarm Clock</h1>
+    <main>
+        <label><button onclick="checkalarm()">Start Alarm Clock</button></label>
+        <p id="output"></p>
+    </main>
+    <script>
+function checkalarm(){
+//Initialize
+const now = new Date();
+let message = `Get Up!`;
+
+//Input
+const theMonth = now.getMonth();
+const theDay = now.getDay();
+const theDate = now.getDate();
+
+//console.log (theMonth, theDay, theDate)
+
+//processing
+if (theDay === 5 || theDay ===6 || (theMonth === 0 && theDay === 1) || (theMonth === 3 && theDay === 4) || (theMonth === 11 && theDay === 25) ){
+    message = `Sleep In!`;
+}
+
+//output
+document.querySelector(`#output`).textContent = message;
+}
+
+    </script>
+</body>
+</html>
