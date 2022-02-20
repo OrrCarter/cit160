@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount</title>
+</head>
+
+<body>
+
+
+    <head>
+        <header>
+            <h1>Sales Slip</h1>
+            <h2>Carter Orr</h2>
+        </header>
+        <link rel="stylesheet" href="css/numbers.css">
+    </head>
+    <main>
+        <h3>Line Items</h3>
+        <div class="tableform">
+            <b><span class="heading">Description</span></b>
+            <b><span class="heading">Quantity</span></b>
+            <b><span class="heading">Price</span></b>
+            <label><input type="text" id="desc1"></label>
+            <label><input type="text" id="q1" size="3"></label>
+            <label><input type="text" id="p1" size="5"></label>
+            <label><input type="text" id="desc2"></label>
+            <label><input type="text" id="q2" size="3"></label>
+            <label><input type="text" id="p2" size="5"></label>
+            <label><input type="text" id="desc3"></label>
+            <label><input type="text" id="q3" size="3"></label>
+            <label><input type="text" id="p3" size="5"></label>
+        </div>
+        <h3>Discount</h3>
+        <label class="heading">%10 off on Tuesdays and Wednesdays w/ Purchases over $50</label>
+        <h3>Tax</h3>
+        <label class="heading">Tax 6% </label>
+
+        <div class="process"><button onclick="getTotal()">Submit Sales Slip</button>
+        </div>
+        <p id="output"></p>
+    </main>
+
+    <script>
+        function getTotal() {
+
+            //input
+            
+            const theMonth = now.getMonth();
+            const theDay = now.getDay();
+            const theDate = now.getDate();
+
+            //input from html
+            let q1 = 0;
+            let p1 = 0;
+            let q2 = 0;
+            let p2 = 0;
+            let q3 = 0;
+            let p3 = 0;
+            let discount = 0;
+            let tax = 0;
+
+            q1 = Number(document.querySelector('#q1').value);
+            p1 = Number(document.querySelector('#p1').value);
+            q2 = Number(document.querySelector('#q2').value);
+            p2 = Number(document.querySelector('#p2').value);
+            q3 = Number(document.querySelector('#q3').value);
+            p3 = Number(document.querySelector('#p3').value);
+            //tax represents the original value plus the tax rate. 6%
+            tax = 1.06;
+            //discount represents total after discount is applied. 10% discount
+            discount = .90;
+
+            // PROCESSING Tax is = 6%
+            //Discount only applies on Tuesdays and Wednesdays for purchases over $50
+
+            aTotal = q1 * p1;
+            bTotal = q2 * p2;
+            cTotal = q3 * p3;
+            salesTotal = aTotal + bTotal + cTotal;
+            discountTotal = salesTotal * discount;
+
+            if (theDay === 2 | theDay === 3 && salesTotal > 50) {
+                let finalTotal = discountTotal * tax;
+            }
+            else {
+                let finalTotal = salesTotal * tax;
+            }
+            //OUTPUT
+            document.getElementById("output").innerHTML = finalTotal;
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>
