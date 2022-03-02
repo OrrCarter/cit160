@@ -21,14 +21,14 @@
 
             // Generating a number
             const max = 50;
-            let num = Math.floor(Math.random() * max)
-
+            let num = Math.floor(Math.random() * max) + 1;
+            let list = '';
             //Creating Loop
 
-            for (let i = 1; i <= num; i++)
+            for (let i = 1; i <= num; i++) {
 
-                let list = `Item: ${num}`;
-
+                list += `Item: ${i}<br/> `;
+            }
 
 
             //output
