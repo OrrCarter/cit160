@@ -40,17 +40,15 @@
         <label class="heading">Tax 6% </label>
 
         <button onclick="getTotal()">Submit Sales Slip</button>
-       <div id="output"></div>
+        <div id="output"></div>
     </main>
 
     <script>
         function getTotal() {
 
             //input
-            
-            const theMonth = now.getMonth();
-            const theDay = now.getDay();
-            const theDate = now.getDate();
+            let d = new Date();
+            const theDay = d.getDay();
 
             //input from html
             let q1 = 0;
@@ -59,8 +57,7 @@
             let p2 = 0;
             let q3 = 0;
             let p3 = 0;
-            let discount = 0;
-            let tax = 0;
+            let finalTotal = 0;
 
             q1 = Number(document.querySelector('#q1').value);
             p1 = Number(document.querySelector('#p1').value);
@@ -69,27 +66,27 @@
             q3 = Number(document.querySelector('#q3').value);
             p3 = Number(document.querySelector('#p3').value);
             //tax represents the original value plus the tax rate. 6%
-            tax = 1.06;
+            const tax = 1.06;
             //discount represents total after discount is applied. 10% discount
-            discount = .90;
+            const discount = .90;
 
             // PROCESSING Tax is = 6%
             //Discount only applies on Tuesdays and Wednesdays for purchases over $50
 
-            aTotal = q1 * p1;
-            bTotal = q2 * p2;
-            cTotal = q3 * p3;
-            salesTotal = aTotal + bTotal + cTotal;
-            discountTotal = salesTotal * discount;
+            let aTotal = q1 * p1;
+            let bTotal = q2 * p2;
+            let cTotal = q3 * p3;
+            let salesTotal = aTotal + bTotal + cTotal;
+            let discountTotal = salesTotal * discount;
 
-            if (theDay === 2 | theDay === 3 && salesTotal > 50) {
-                let finalTotal = discountTotal * tax;
+            if (theDay === 2 || theDay === 3 && salesTotal > 50) {
+                finalTotal = discountTotal * tax;
             }
             else {
-                let finalTotal = salesTotal * tax;
+                finalTotal = salesTotal * tax;
             }
             //OUTPUT
-            document.getElementById("output").innerHTML = finalTotal;
+            document.getElementById("output").innerHTML = `$ ${finalTotal.toFixed(2)}`;
 
         }
 
