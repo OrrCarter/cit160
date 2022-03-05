@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 Times Table</title>
+    <h1>Times Table</h1>
+    <h2>5 Times Table Up to 12</h2>
+    <button onclick="table()"> Click Me </button>
+    <p id="clickMe"></p>
+</head>
+<body>
+    <script>
+        function table(){
+
+            //setting variables
+            const num = 5;
+            let line = "";
+
+//Creating a loop. Repeat until i=12. Multiply 5 time i. 
+
+for(let i = 1; i<=12; i++){
+
+    line += `${num} X ${i} = ${num*i} <br/>`;
+
+
+}
+            //outpue
+            document.querySelector("#clickMe").innerHTML = line;
+
+
+        }
+
+
+    </script>
+</body>
+</html>
