@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Integers</title>
+</head>
+
+<body>
+    <h1>Intergers</h1>
+    <label>Start</label>
+    <input type="text" id="start">
+    <label>End</label>
+    <input type="text" id="end">
+    <label>Divisor</label>
+    <input type="text" id="divisor">
+    <button onclick="integer()">Click Here</button>
+    <div id="output"></div>
+
+    <script>
+        function integer() {
+
+            //get elements from html
+
+            let start = 0;
+            let end = 0;
+            let divisor = 0;
+
+            start = parseInt(document.querySelector('#start').value);
+            end = parseInt(document.querySelector('#end').value);
+            divisor = parseInt(document.querySelector('#divisor').value);
+            let text = '';
+
+            //Math
+
+            for (start; start <= end; start++) {
+                if (start / divisor == integer) {
+               text = start; 
+
+                }
+
+                //output
+
+                document.querySelector('#output').innerHTML = text;
+
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2 ^ 0 - 31</title>
+</head>
+
+<body>
+    <h1>2 to The Power</h1>
+    <button onclick="power()">Click Here</button>
+    <p id="calculate">
+
+    <script>
+        function power() {
+           //setting variables 
+            const num = 2;
+            let line = "";
+//setting loop structure. 2 to the power of 0 all the way to 31. 
+            for (let i = 0; i <= 31; i++) {
+
+                line += `${num ** i}, `;
+
+
+            }
+
+            //output
+
+            document.querySelector("#calculate").innerHTML = line;
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

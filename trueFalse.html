@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+
+<head>
+    <meta charset="utf-8">
+    <title>Title</title>
+</head>
+
+<body>
+    <p>Please enter two numbers:</p>
+    <input type="text" id="one" size="5"><br>
+    <input type="text" id="two" size="5">
+    <button type="button" onclick="num2()">Click</button>
+    <div id="output"></div>
+
+    <script>
+        function num2() {
+
+            //Write a JavaScript program that reads two numbers from two text fields and 
+            //then outputs to a div "True" if both of the numbers are greater than 5 or 
+            //if their sum is greater than 20. Otherwise your program should output "False" to the div.
+
+            //Input:
+            let one = 0;
+            let two = 0;
+
+            //Processing:
+            one = Number(document.querySelector('#one').value);
+            two = Number(document.querySelector('#two').value);
+            sum = one + two;
+            text = "";
+
+            if (one >= 5 && two >= 5 || sum >= 20) {
+                text = `${one} ${two} True`;
+
+            }
+            else{
+                text = `${one} ${two} False`;
+            }
+
+            //Output:
+document.querySelector('#output').innerHTML = text;
+
+        }
+    </script>
+</body>
+
+</html>
