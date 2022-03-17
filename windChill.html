@@ -10,28 +10,37 @@
 
 <body>
     <h1>Wind Chill</h1>
-    <label for="Tempature">Tempature</label><input type="text" id="Tempature">
-    <label for="Wind Speed">Wind Speed</label><input type="text" id="windSpeed">
-    <button onclick="wind()">Wind Chill</button>
+    <label for="tempature">Tempature</label><input type="text" id="temp">
+    <label for="Wind Speed">Wind Speed</label><input type="text" id="wind">
+    <button onclick="doInputOutput()">Wind Chill</button>
     <div id="process"></div>
 
     <script>
         // parameters to calculat windchill and call windChill function
         //above 50 degrees Fahrenheit nor for wind speeds below 3 miles per hour
-        let tempature = 0;
-        let windSpeed = 0;
+
 
         function doInputOutput() {
-            tempature = number(document.getElementById("Tempature").value);
-            windSpeed = number(document.getElementById("windSpeed").value);
-            if (tempature <= 50 || windSpeed > 3)
-                windchill();
+            let tempature = 0;
+            let windSpeed = 0;
+            tempature = parseFloat(document.getElementById("temp").value);
+            windSpeed = parseFloat(document.getElementById("wind").value);
+            if (tempature <= 50 && windSpeed > 3)
+            //the parameters are set with the variables from this function. 
+            //examples the input tempature and the input windSpeed.
+            //parameters need to be spelled like variables.
+
+                windChill(tempature, windSpeed);
+
+            document.querySelector("#process").innerHTML = number.toFixed(2);
 
         }
         // formula for windchill  f = 35.74 + 0.6215 t - 35.75 s0.16 + 0.4275 t s0.16
-        function windChill() {
+        // parameters take the variables from other function and rename them for this function.
+        //doesn't have to have the same name since they are defined in other function.
+        function windChill(tempature, windSpeed) {
 
-            35.74 + (0.6215 * tempature) - 35.75(windSpeed ** 0.16) + (0.4275 * tempature) * (windSpeed ** 0.16);
+            return number = 35.74 + (0.6215 * tempature) - 35.75 * (windSpeed ** 0.16) + (0.4275 * tempature) * (windSpeed ** 0.16);
 
 
 
