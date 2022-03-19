@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invest</title>
+    <link rel="stylesheet" href="css/invest.css">
+</head>
+<h1>Invest</h1>
+<br>
+<main>
+<label for="principal">Principal  <input type="text" id="principal">  </label><br>
+<label for="annualRate">Annual Rate  <input type="text" id="annualRate">  </label><br>
+<label for="yearsl">Year  <input type="text" id="years">  </label><br>
+<label for="periodsPerYear">Periods Per Year  <input type="text" id="periodsPerYear">  </label><br><br>
+
+<button onclick="doFV()">Calculate</button><br>
+<div id="process"></div>
+</main>
+
+<body>
+    <script>
+
+        function doFV() {
+            //setting values 
+            let per = Number(document.querySelector("#periodsPerYear").value);
+            let p = Number(document.querySelector("#principal").value);
+            let a = (parseFloat(document.querySelector("#annualRate").value) / per);
+            let y = (parseFloat(document.querySelector("#years").value) * per);
+
+            let f = 0;
+
+            //processing 
+
+            f = computFutureValue(p, a, y, per);
+
+            //output
+
+            document.querySelector("#process").innerHTML = number.toFixed(2);
+        }
+
+
+        /*
+        f = a (1 + r)n
+        principal, annualRate, years, periodsPerYear
+         f is the future value
+         */
+
+        function computFutureValue(p, a, y, per) {
+
+            return  number = p * ((1 + a) ** y);
+
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
