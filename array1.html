@@ -47,9 +47,16 @@
         }
         function getMiddle(list) {
 
-if (list.length/2 === list%0){
+if (list % 2 === 0){
+    //4,6,10,12,4,3
+    let  len = list.length;
 
-
+return (list[len/2] + list[len/2-1])/2;
+}
+ 
+else {
+    //2,5,3,7,9
+    return list[Math.floor(list.length/2)];
 }
         }
     </script>
